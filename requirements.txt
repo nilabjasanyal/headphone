@@ -1,6 +1,4 @@
 alembic==1.6.5
-beautifulsoup4==4.9.3
-bigO==0.2
 certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
@@ -13,8 +11,6 @@ Flask-Bootstrap==3.3.7.1
 Flask-CKEditor==0.4.4.1
 Flask-Login==0.5.0
 Flask-Migrate==3.1.0
-Flask-SQLAlchemy==2.4.4
-Flask-WTF==0.14.3
 greenlet==1.1.0
 gunicorn==20.1.0
 idna==2.10
@@ -25,12 +21,7 @@ kiwisolver==1.3.1
 lxml==4.6.3
 Mako==1.1.4
 MarkupSafe==1.1.1
-matplotlib==3.4.2
 mpmath==1.2.1
-nsepy==0.8
-nsetools==1.0.11
-numpy==1.21.0
-pandas==1.2.5
 Pillow==8.3.1
 pyparsing==2.4.7
 python-dateutil==2.8.1
@@ -38,17 +29,13 @@ python-decouple==3.4
 python-dotenv==0.18.0
 python-editor==1.0.4
 pytube==11.0.0
-pytube3==9.6.4
-pytube4==0.1.1
 pytz==2021.1
 requests==2.24.0
-selenium==3.141.0
 six==1.16.0
 soupsieve==2.2.1
-SQLAlchemy==1.3.19
 sympy==1.8
 typing-extensions==3.10.0.0
 urllib3==1.25.10
 visitor==0.1.3
 Werkzeug==1.0.1
-WTForms==2.3.3
+
