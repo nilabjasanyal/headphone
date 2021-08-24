@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/a4456b4361.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+<body >
+<!-------------------------------------------------------------------------------------->
+<!--------------------------------------NAVBAR------------------------------------------>
+<!-------------------------------------------------------------------------------------->
+<nav class="bg-white mx-auto shadow-lg">
+			<div class="  px-1">
+				<div class="flex justify-between">
+					<div class="flex ">
+
+						<!-- Primary Navbar items -->
+						<div class="hidden md:flex  items-center  ">
+
+							<a href={{url_for('home')}} class="py-2 px-4 m-2 text-gray-500 font-semibold hover:text-purple-700 hover:bg-purple-200 transition duration-300 rounded">Home</a>
+							<a href={{url_for('download_page')}} class="py-2 px-4 text-gray-500 font-semibold hover:text-purple-700 hover:bg-purple-200 transition duration-300 rounded m-2">Index</a>
+							<a href={{url_for('about_us')}} class="py-2 px-4 text-gray-500 font-semibold hover:text-purple-700 hover:bg-purple-200  transition duration-300 rounded m-2">About Us</a>
+
+						</div>
+					</div>
+
+          <div >
+							<!-- Website Logo -->
+							<a href="#" class="flex items-center py-4 px-4">
+<!--								<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2">-->
+								<span class="font-semibold text-gray-500 text-lg">HEADPHONE</span>
+							</a>
+						</div>
+
+					<!-- Mobile menu button -->
+					<div class="md:hidden sm:hidden flex items-center">
+						<button class="outline-none mobile-menu-button">
+						<svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+							x-show="!showMenu"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+					</div>
+				</div>
+			</div>
+			<!-- mobile menu -->
+			<div class="hidden mobile-menu">
+				<ul class="">
+					<li><a href={{url_for('home')}} class="block text-sm px-2 py-4  hover:bg-purple-200 hover:text-purple-700 transition duration-300">Home</a></li>
+					<li><a href={{url_for('download_page')}} class="block text-sm px-2 py-4 hover:bg-purple-200 hover:text-purple-700 transition duration-300">Index</a></li>
+					<li><a href={{url_for('about_us')}} class="block text-sm px-2 py-4 hover:bg-purple-200 hover:text-purple-700 transition duration-300">About us</a></li>
+
+				</ul>
+			</div>
+			<script>
+				const btn = document.querySelector("button.mobile-menu-button");
+				const menu = document.querySelector(".mobile-menu");
+
+				btn.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
+				});
+			</script>
+		</nav>
+
+<!-------------------------------------------------------------------------------------->
+<!---------------------------------------TABLE------------------------------------------->
+<!-------------------------------------------------------------------------------------->
+<div class="bg-purple-500 px-4 py-5 border-b rounded-t sm:px-6 m-4">
+                  <h3 class="text-xl leading-6 font-medium text-white" style="font-family: 'Baloo Thambi 2', cursive;">
+                    Pick your choice and download our clips for you Whatsapp status and facebook/instagram stories.
+                  </h3>
+                </div>
+
+                <div class="bg-white shadow overflow-hidden sm:rounded-md">
+                  <ul class="divide-y divide-gray-200">
+
+                      {%for links in url_dict:%}
+                    <li>
+                      <a  class="block hover:bg-gray-50">
+                        <div class="px-4 py-4 sm:px-6">
+                          <div class="flex items-center justify-between">
+<!-------------------------------------------TITLE OF THE VIDEO--------------------------------------------------------->
+
+					<h2 class="break-normal sm:break-all text-sm font-thin text-gray-700 truncate">
+						<a href={{url_for('clip_info',title=url_dict[links][0])}}>{{url_dict[links][0]}}</a>
+					</h2>
+
+<!----------------------------------------DOWNLOAD BUTTON-------------------------------------------------------------->
+
+                            <div class="ml-2 flex-shrink-0 flex">
+							<a href={{url_for('download_video',title=url_dict[links][0])}}>
+                              <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 hover:bg-green-200 text-green-800 hover:text-green-700">
+                                Download
+                              </p>
+							</a>
+                            </div>
+
+                          </div>
+                          <div class="mt-2 sm:flex sm:justify-between">
+                            <div class="sm:flex">
+                              <p class="flex items-center text-sm font-light text-gray-500">
+                                length: {{url_dict[links][1]}}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    {% endfor %}
+
+                  </ul>
+            <a href={{url_for('clip_increment')}}>
+            <button type="button" class="inline-flex items-center m-4 px-4 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              View more
+            </button>
+            </a>
+                </div>
+<!-- Footer -->
+<footer class="text-center py-16 bg-gray-700 text-sm">
+  <p class="text-white" style="font-family: 'Comfortaa', cursive;">
+    Designed and Developed by Nilabja Sanyal.
+  </p>
+    <p class="text-white mt-2" ><i class="fab fa-whatsapp" style="font-size:18px"></i>  9475530199.</p>
+  <div class="mt-4">
+      <a href="https://www.facebook.com/nilabja.sanyal.3">
+      <button class="bg-transparent hover:bg-blue-500 text-gray-300 font-semibold hover:text-white py-1 px-1 border-2 border-gray-300 hover:border-transparent rounded-full">
+        <i class="fab fa-facebook" style="font-size:18px"></i>
+      </button>
+      </a>
+      <a href="https://www.instagram.com/nil.joe/">
+      <button class="bg-transparent hover:bg-yellow-900 text-gray-300 font-semibold hover:text-yellow-500 py-1 px-1 border-2 border-gray-300 hover:border-transparent rounded-full">
+         <i class="fa fa-instagram" style="font-size:18px"></i>
+      </button>
+      </a>
+      <a href="https://github.com/nilabjasanyal">
+          <button class="bg-transparent hover:bg-gray-500 text-gray-300 font-semibold hover:text-white py-1 px-1 border-2 border-gray-300 hover:border-transparent rounded-full">
+              <i class="fab fa-github" style="font-size:18px"></i>
+          </button>
+      </a>
+  </div>
+
+</footer>
+
+</body>
+
+</html>

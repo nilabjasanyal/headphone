@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a4456b4361.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<style>
+  .bg-dots{
+    background-image: url(https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5dea7a12bb83ab1f13040de5_cx-dots.svg);
+    background-repeat: no-repeat
+  }
+</style>
+
+
+</head>
+<body >
+<!-------------------------------------------------------------------------------------->
+<!--------------------------------------NAVBAR------------------------------------------>
+<!-------------------------------------------------------------------------------------->
+<nav class="bg-white mx-auto shadow-lg">
+			<div class="  px-1">
+				<div class="flex justify-between">
+					<div class="flex ">
+
+						<!-- Primary Navbar items -->
+						<div class="hidden md:flex  items-center  ">
+
+                            <a href={{url_for('home')}} class="py-2 px-4 m-2 text-gray-500 font-semibold hover:text-purple-700 hover:bg-purple-200 transition duration-300 rounded">Home</a>
+							<a href={{url_for('download_page')}} class="py-2 px-4 text-gray-500 font-semibold hover:text-purple-700 hover:bg-purple-200 transition duration-300 rounded m-2">Index</a>
+							<a href={{url_for('about_us')}} class="py-2 px-4 text-gray-500 font-semibold hover:text-purple-700 hover:bg-purple-200  transition duration-300 rounded m-2">About Us</a>
+
+						</div>
+					</div>
+
+          <div >
+							<!-- Website Logo -->
+							<a href="#" class="flex items-center py-4 px-4">
+<!--								<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2">-->
+								<span class="font-semibold text-gray-500 text-lg">HEADPHONE</span>
+							</a>
+						</div>
+
+					<!-- Mobile menu button -->
+					<div class="md:hidden sm:hidden flex items-center">
+						<button class="outline-none mobile-menu-button">
+						<svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+							x-show="!showMenu"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+					</div>
+				</div>
+			</div>
+			<!-- mobile menu -->
+			<div class="hidden mobile-menu">
+				<ul class="">
+					<li><a href={{url_for('home')}} class="block text-sm px-2 py-4  hover:bg-purple-200 hover:text-purple-700 transition duration-300">Home</a></li>
+					<li><a href={{url_for('download_page')}} class="block text-sm px-2 py-4 hover:bg-purple-200 hover:text-purple-700 transition duration-300">Index</a></li>
+					<li><a href={{url_for('about_us')}} class="block text-sm px-2 py-4 hover:bg-purple-200 hover:text-purple-700 transition duration-300">About us</a></li>
+
+				</ul>
+			</div>
+			<script>
+				const btn = document.querySelector("button.mobile-menu-button");
+				const menu = document.querySelector(".mobile-menu");
+
+				btn.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
+				});
+			</script>
+		</nav>
+
+<!-------------------------------------------------------------------------------------->
+<!---------------------------------------HERO------------------------------------------->
+<!-------------------------------------------------------------------------------------->
+<div class="bg-green-100 py-14">
+    <h3 class="text-5xl tracking-widest text-green-600 text-center">HEADPHONE</h3>
+    <h1 class="mt-8 text-center text-2xl text-green-600 font-bold">Meet the team behind the scene.</h1>
+
+    <!-- Box -->
+    <div class="md:flex md:justify-center md:space-x-8 md:px-14">
+      <!-- box-1 -->
+      <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+        <div class="w-sm">
+
+          <img class="w-64  mt-8 rounded" src="https://lh3.googleusercontent.com/DXo6Oll88e_YVRa1wmyyfew8YPVUNpxpwmrWqBsAbiGHID4Dapr3IBPT-16v6moL0mXDP3U8NaabcymL3yX_vN2GZh5FKJOhcgFJGoOKEAyrsXvlBHYSB_5yUGFfyGzuw9HEuYfDYg=w2400" alt="" />
+
+          <div class="mt-4 text-green-600 text-center">
+            <h1 class="text-xl font-bold">NILABJA SANYAL</h1>
+            <h3 class="text-xs font-bold">WEBSITE DEVELOPER</h3>
+            <p class="mt-4 text-gray-600">Hey there!! I am Nil, did you like this website? please let me know. My social media links are below, Why don't you give me a follow and then let's talk. Also feel free to approach me with any Potential project ideas.</p>
+            <div class="container mt-4" style="text-align: center">
+              <a href="https://www.facebook.com/nilabja.sanyal.3">
+              <button class="bg-transparent hover:bg-blue-500 text-gray-700 font-semibold hover:text-white py-1 px-1.5 border-2 border-gray-600 hover:border-transparent rounded-full">
+                <i class="fab fa-facebook" style="font-size:24px"></i>
+              </button>
+              </a>
+              <a href="https://www.instagram.com/nil.joe/">
+              <button class="bg-transparent hover:bg-yellow-900 text-gray-700 font-semibold hover:text-yellow-500 py-1 px-2 border-2 border-gray-600 hover:border-transparent rounded-full">
+                 <i class="fa fa-instagram" style="font-size:24px"></i>
+              </button>
+              </a>
+              <a href="https://github.com/nilabjasanyal">
+                  <button class="bg-transparent hover:bg-gray-600 text-gray-700 font-semibold hover:text-white py-1 px-1.5 border-2 border-gray-600 hover:border-transparent rounded-full">
+                      <i class="fab fa-github" style="font-size:24px"></i>
+                  </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- box-2 -->
+      <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+        <div class="w-sm">
+          <img class="w-64 mt-8 rounded" src="https://lh3.googleusercontent.com/BBtc-2N_PwO-IR3ucsQjqtu-deik2gBYdpZKkVdVbmnVkOQZ2QpjDchEcL-0Jwt7WMQbXMaj94vZq43n-8epip7sn5kPViwXr1YWMOg2SWg8eZEl__eQyhO9dFgPnehNUIb60oxRBw=w2400" alt="" />
+          <div class="mt-4 text-green-600 text-center">
+            <h1 class="text-xl font-bold">ARITRA DAS</h1>
+            <h3 class="text-xs font-bold">ADMIN</h3>
+            <p class="mt-4 text-gray-600">Aritra Das is the admin of the Headphone Official Page & Headphone Group. He basically looks after all the social events of our page.</p>
+            <div class="container mt-10" style="text-align: center">
+              <a href="https://www.facebook.com/aritra.das.37604303">
+              <button class="bg-transparent hover:bg-blue-500 text-gray-700 font-semibold hover:text-white py-1 px-1.5 border-2 border-gray-600 hover:border-transparent rounded-full">
+                <i class="fab fa-facebook" style="font-size:24px"></i>
+              </button>
+              </a>
+              <a href="https://www.instagram.com/iam_aritradas/?utm_medium=copy_link">
+              <button class="bg-transparent hover:bg-yellow-900 text-gray-700 font-semibold hover:text-yellow-500 py-1 px-2 border-2 border-gray-600 hover:border-transparent rounded-full">
+                 <i class="fa fa-instagram" style="font-size:24px"></i>
+              </button>
+              </a>
+              <a href="https://www.youtube.com/channel/UCS7S4NlE1SIjztaGzcHN0vQ">
+                  <button class="bg-transparent hover:bg-red-600 text-gray-700 font-semibold hover:text-white py-1 px-1 border-2 border-gray-600 hover:border-transparent rounded-full">
+                      <i class="fab fa-youtube" style="font-size:24px"></i>
+                  </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- box-3 -->
+      <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+        <div class="w-sm">
+          <img class="w-64 mt-8 rounded" src="https://lh3.googleusercontent.com/9rY2nm1f_vyXVAGz1VNGhVby9_C00CtRmLzl7G9m_jC_0uZSSPLobr5-h1ZKyaAYJ4nTYEgSE4ME2rVyEVtdAN4P5STb-GJCwOmdMCaHVL2e4Yl2B9MAlZo5JjF5mm_mZ0dSQBNQxg=w2400" alt="" />
+          <div class="mt-4 text-green-600 text-center">
+            <h1 class="text-xl font-bold">ANSHUMAN DAS</h1>
+            <h3 class="text-xs font-bold">ADMIN</h3>
+            <p class="mt-4 text-gray-600">Anshuman Das is the admin/creator of the Headphone Official Facebook Page.</p>
+            <div class="container mt-20" style="text-align: center">
+              <a href="https://www.facebook.com/profile.php?id=100009446246059">
+              <button class="bg-transparent hover:bg-blue-500 text-gray-700 font-semibold hover:text-white py-1 px-1.5 border-2 border-gray-600 hover:border-transparent rounded-full">
+                <i class="fab fa-facebook" style="font-size:24px"></i>
+              </button>
+              </a>
+              <a href="https://www.instagram.com/ansu_das/?utm_medium=copy_link">
+              <button class="bg-transparent hover:bg-yellow-900 text-gray-700 font-semibold hover:text-yellow-500 py-1 px-2 border-2 border-gray-600 hover:border-transparent rounded-full">
+                 <i class="fa fa-instagram" style="font-size:24px"></i>
+              </button>
+              </a>
+              <a href="https://www.youtube.com/channel/UCS7S4NlE1SIjztaGzcHN0vQ">
+                  <button class="bg-transparent hover:bg-red-600 text-gray-700 font-semibold hover:text-white py-1 px-1 border-2 border-gray-600 hover:border-transparent rounded-full">
+                      <i class="fab fa-youtube" style="font-size:24px"></i>
+                  </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- Footer -->
+<footer class="text-center py-16 bg-gray-700 text-sm">
+  <p class="text-white" style="font-family: 'Comfortaa', cursive;">
+    Designed and Developed by Nilabja Sanyal.
+  </p>
+    <p class="text-white mt-2" ><i class="fab fa-whatsapp" style="font-size:18px"></i>  9475530199.</p>
+  <div class="container mt-4" style="text-align: center">
+      <a href="https://www.facebook.com/nilabja.sanyal.3">
+      <button class="bg-transparent hover:bg-blue-500 text-gray-300 font-semibold hover:text-white py-1 px-1 border-2 border-gray-300 hover:border-transparent rounded-full">
+        <i class="fab fa-facebook" style="font-size:18px"></i>
+      </button>
+      </a>
+      <a href="https://www.instagram.com/nil.joe/">
+      <button class="bg-transparent hover:bg-yellow-900 text-gray-300 font-semibold hover:text-yellow-500 py-1 px-1 border-2 border-gray-300 hover:border-transparent rounded-full">
+         <i class="fa fa-instagram" style="font-size:18px"></i>
+      </button>
+      </a>
+      <a href="https://github.com/nilabjasanyal">
+          <button class="bg-transparent hover:bg-gray-500 text-gray-300 font-semibold hover:text-white py-1 px-1 border-2 border-gray-300 hover:border-transparent rounded-full">
+              <i class="fab fa-github" style="font-size:18px"></i>
+          </button>
+      </a>
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
