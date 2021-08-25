@@ -79,7 +79,7 @@
                 <h1 class="text-3xl font-medium tracking-wide text-gray-800 dark:text-white md:text-4xl">{{title}}</h1>
                 <p class="mt-4 text-gray-600 dark:text-gray-300">{{description}}</p>
                 <div class="mt-6">
-                    <a href="#" class="block px-3 py-2 font-semibold text-center text-green-500 transition-colors duration-200 transform bg-green-300 rounded-md md:inline hover:bg-green-400 hover:text-green-200">Download clip</a>
+                    <a href={{url_for('download_video',title=title)}} class="block px-3 py-2 font-semibold text-center text-green-500 transition-colors duration-200 transform bg-green-300 rounded-md md:inline hover:bg-green-400 hover:text-green-200">Download clip</a>
                 </div>
             </div>
         </div>
